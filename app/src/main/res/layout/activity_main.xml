@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_bind_remote_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绑定远程服务"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/et_num_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/et_num_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/calculate_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="调用远程服务计算  "
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/tv_calculate_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  相加"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/tv_calculate_subtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  相减"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/tv_calculate_multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  相乘"
+            android:textSize="50sp" />
+    </LinearLayout>
+</LinearLayout>
