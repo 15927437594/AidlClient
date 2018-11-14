@@ -73,12 +73,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.tv_calculate_add:
-                if (calculateInterface == null) {
+                if (null == calculateInterface) {
                     Toast.makeText(mContext, "请先绑定远程服务", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 try {
-                    if (etNumOne.getText().toString().trim().equals("") || etNumTwo.getText().toString().trim().equals("") || !isNumeric(etNumOne.getText().toString().trim()) || !isNumeric(etNumTwo.getText().toString().trim())) {
+                    if (etNumOne.getText().toString().trim().equals("") || etNumTwo.getText().toString().trim().equals("") || isNotNumeric(etNumOne.getText().toString().trim()) || isNotNumeric(etNumTwo.getText().toString().trim())) {
                         Toast.makeText(mContext, "请输入数字", Toast.LENGTH_SHORT).show();
                     } else {
                         int i = calculateInterface.doCalculateAdd(Integer.parseInt(etNumOne.getText().toString()), Integer.parseInt(etNumTwo.getText().toString()));
@@ -89,12 +89,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.tv_calculate_subtract:
-                if (calculateInterface == null) {
+                if (null == calculateInterface) {
                     Toast.makeText(mContext, "请先绑定远程服务", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 try {
-                    if (etNumOne.getText().toString().trim().equals("") || etNumTwo.getText().toString().trim().equals("")|| !isNumeric(etNumOne.getText().toString().trim()) || !isNumeric(etNumTwo.getText().toString().trim())) {
+                    if (etNumOne.getText().toString().trim().equals("") || etNumTwo.getText().toString().trim().equals("") || isNotNumeric(etNumOne.getText().toString().trim()) || isNotNumeric(etNumTwo.getText().toString().trim())) {
                         Toast.makeText(mContext, "请输入数字", Toast.LENGTH_SHORT).show();
                     } else {
                         int i = calculateInterface.doCalculateSubtract(Integer.parseInt(etNumOne.getText().toString()), Integer.parseInt(etNumTwo.getText().toString()));
@@ -105,12 +105,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.tv_calculate_multiply:
-                if (calculateInterface == null) {
+                if (null == calculateInterface) {
                     Toast.makeText(mContext, "请先绑定远程服务", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 try {
-                    if (etNumOne.getText().toString().trim().equals("") || etNumTwo.getText().toString().trim().equals("")|| !isNumeric(etNumOne.getText().toString().trim()) || !isNumeric(etNumTwo.getText().toString().trim())) {
+                    if (etNumOne.getText().toString().trim().equals("") || etNumTwo.getText().toString().trim().equals("") || isNotNumeric(etNumOne.getText().toString().trim()) || isNotNumeric(etNumTwo.getText().toString().trim())) {
                         Toast.makeText(mContext, "请输入数字", Toast.LENGTH_SHORT).show();
                     } else {
                         int i = calculateInterface.doCalculateMultiply(Integer.parseInt(etNumOne.getText().toString()), Integer.parseInt(etNumTwo.getText().toString()));
@@ -155,8 +155,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
-    public boolean isNumeric(String str) {
+    /**
+     * 判断字符串是否全由数字组成
+     *
+     * @param str 字符串源
+     * @return 返回isNumeric布尔值
+     */
+    public boolean isNotNumeric(String str) {
         Pattern pattern = Pattern.compile("[0-9]*");
-        return pattern.matcher(str).matches();
+        return !pattern.matcher(str).matches();
     }
+
 }
