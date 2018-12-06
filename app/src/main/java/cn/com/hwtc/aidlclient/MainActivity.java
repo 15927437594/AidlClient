@@ -165,5 +165,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Pattern pattern = Pattern.compile("[0-9]*");
         return !pattern.matcher(str).matches();
     }
-
 }
